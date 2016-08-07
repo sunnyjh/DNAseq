@@ -1,0 +1,91 @@
+一， 安装：
+
+首先在家目录下， 下载安装包
+
+wget http://sourceforge.net/projects/snpeff/files/snpEff_latest_core.zip
+
+然后进行解压
+
+unzip snpEff_latest_core.zip
+
+会产生一个snpEff目录 所有的程序都在这里面
+
+二， 配置自己的基因组和注释文件， 官方的数据库中有大量的参考基因组，一般都不需要配置。如果在官方的database中没有找到就需要自己配置
+
+1，注释文件为gff3格式
+
+假如我现在有一个参考基因组： Osativa_204.fa
+
+有个这个基因组的注释文件： Osativa_204_gene.gff3
+
+首先编辑配置文件，加入新基因组的entry
+
+配置文件在snpEff目录下， 配置文件名为snpEff.config
+
+用vi进行编辑 加入如下两行
+
+# Rice genome, version Osativa_204
+Osativa_204.genome : Rice
+
+然后保存退出
+
+还是在snpEff文件下， 创建目录data
+
+mkdir data
+
+cd data
+
+创建Osativa_204 和 genomes目录
+
+mkdir Osativa_204
+
+mkdir genoems
+
+将你的gff3注释文件放在Osativa_204目录下
+
+将你的参考序列文件放在genomes目录下
+
+注意，要将注释文件重新命名为genes.gff
+
+完成后回到 snpEff 目录， 执行命令：
+
+java -jar snpEff.jar build -gff3 -v Osativa_204
+
+2，注释文件时gtf格式
+
+假如有注释文件为：Osativa_204.gtf
+
+前面步骤都一样， 不同的是：
+要将注释文件重新命名为genes.gtf
+
+执行命令改为：
+
+java -jar snpEff.jar build -gtf22 -v Osativa_204
+
+ 
+
+  
+
+  三， 开始统计执行：
+
+  先将vcf文件copy到data目录下
+
+  然后在snpEff目录下执行命令：
+
+  java -Xmx8g -jar snpEff.jar Osativa_204 data/testgroup.filtered.ordered.vcf > test.eff.vcf
+
+  命令执行完后在snpEff目录下会产生三个文件
+
+  snpEff_genes.txt
+
+  snpEff_summary.html
+
+  test.eff.vcf
+
+  然后将snpEff_summary.html用浏览器打开就可以看到结果的汇总情况， 可能网页中有些图片加载不出来，那是因为那些图片需要下载，可能是在国外的服务器，
+
+  五， 如何更换注释文件
+
+  如果想要更换注释文件。先进入~/snpEff/data/Osativa_204目录将注释文件和bin文件删除，将新的注释文件copy到此目录
+
+  重新执行上面所述build步
