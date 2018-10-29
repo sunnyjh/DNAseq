@@ -27,7 +27,7 @@ MAF为常用的体细胞突变注释文件格式，可通过maftools对MAF文件
      var_maf = read.maf(maf ="var_annovar_maf2")
      plotmafSummary(maf = var_maf, rmOutlier = TRUE, addStat = 'median'))
 
-![](https://github.com/sunnyjh/DNAseq/edit/master/images/maftools_plotsummary.png)
+![](./images/maftools_plotsummary.png)
 ### 2.3 绘制瀑布图——oncoplots]
      oncoplot(maf = var_maf, top = 400, writeMatrix=T,removeNonMutated = F,showTumorSampleBarcodes=T)
     
