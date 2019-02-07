@@ -1,0 +1,14 @@
+#
+## 1.locate 安装
+    sudo yum install mlocate
+    sudo updatedb
+    locate  *.doc
+
+## 2.查看是否存在动态链接库
+    locate *.so
+
+## 3.查看二进制软件依赖哪些动态链接库
+    ldd 软件名或动态链接库名
+
+## 4.
+    strings 动态链接库名
