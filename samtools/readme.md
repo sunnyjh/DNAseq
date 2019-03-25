@@ -6,7 +6,7 @@
 
 ![samtools flagstat](flagstat.png)
 
-    total：分析的总reads数（bam文件所有行数）
+    total：bam文件所有行数
     mapped：比对上的reads数（总体比对率）
     paired in sequencing：成对的reads总数
     read1：属于reads1的reads数量
