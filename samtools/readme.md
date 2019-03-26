@@ -18,6 +18,9 @@
     with itself and mate mapped：比对到基因组上配对的reads数，包括read1和read2比对到不同染色体上或者insert size较大的成对的read数。
     singletons：只有单条reads比对上的reads数
     以上计数均以reads条数计，一对reads计为两条。
+    
+    samtools view -q 与samtools view -F 256区别：
+    前者是去除MAPQ低的alignment，不仅包括唯一alignment reads还包括多重alignment reads，但是一般情况下具有多重alignment的read，其大部分alignment的MAPQ比较低。而后者则只是过滤掉具有多重alignment的reads中除primary alignment外的所有secondary alignment。
 
 ## 3.samtools cigar
 
