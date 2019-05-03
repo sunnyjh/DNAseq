@@ -1,6 +1,8 @@
 # 突变检测软件原理研究
 
 ## 1.[unifiedgenotyper](https://gatkforums.broadinstitute.org/gatk/discussion/1237/how-unified-genotyper-works-retired)
+   https://software.broadinstitute.org/gatk/download/archive
+   https://software.broadinstitute.org/gatk/download/auth?package=GATK-archive&version=3.8-1-0-gf15c1c3ef
 
 ### 1.1 简介
 
