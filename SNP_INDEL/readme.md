@@ -12,4 +12,6 @@
     
 ### 1.2 步骤
 
+    https://gatkforums.broadinstitute.org/gatk/discussion/1237/how-unified-genotyper-works-retired
+    https://software.broadinstitute.org/gatk/media/docs/Multiallelic.pdf
     
