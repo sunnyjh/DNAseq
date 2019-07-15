@@ -2,19 +2,20 @@
 
 ## 1.WGS
 
-### 1.0 问题：
+### 1.1 问题：
     1）mask重复区
     2）GC异常区校正
     3）mappingability校正
     4）PCR偏好性：可用PCR free建库代替
+    5）文库制备
 
-### 1.1 低深度WGS：5x以下，分辨率低，对于大的CNV敏感度高，但成本低、样本周转周期短、对计算机硬性条件低
+### 1.2 低深度WGS：5x以下，分辨率低，对于大的CNV敏感度高，但成本低、样本周转周期短、对计算机硬性条件低
     分辨率在几十kb以上，因为了保证每个窗口有足够的reads，一般设置窗口大小为20kb，这样分辨率为60kb，对于小的CNV检测不到。
 
-### 1.2 高深度WGS：5x以上，如30X或50X,分辨率高，敏感度高，问题是成本高、样本周转周期长（测序、分析等）、对计算机硬性条件和分析人员要求高。
+### 1.3 高深度WGS：5x以上，如30X或50X,分辨率高，敏感度高，问题是成本高、样本周转周期长（测序、分析等）、对计算机硬性条件和分析人员要求高。
     [CNVseq算法]()
 
-### 1.3 Array VS low WGS vs high WGS（比较low WGS是否能代替Array）
+### 1.4 Array VS low WGS vs high WGS（比较low WGS是否能代替Array）
     参考链接：https://mp.weixin.qq.com/s?__biz=MzA4MDQ0NzM1MQ==&mid=2650190427&idx=1&sn=2e6ba5f4bbce220fbcbdedd782c05f69&chksm=87a60043b0d1895511b18bebd8927db0990b055a49c4c5f7bb3d00f460642ee690bfbf8fa0d5&mpshare=1&scene=1&srcid=0618CdFLteORM9Uq0fm9KD6U&from=singlemessage&clicktime=1563013462&ascene=7&devicetype=android-24&version=27000536&nettype=WIFI&abtest_cookie=BgABAAgACgALABIAEwAVAAYAnYYeACOXHgBWmR4AzpkeAPaZHgAMmh4AAAA%3D&lang=zh_CN&pass_ticket=Qqq9pMkDQZov5Lp7nyDrhZrjSqrruJ2qB1B43ThVXkvNTKO%2Bz8DsZZsZ%2BuHs9om%2B&wx_header=1
     参考文献：Whole-genome sequencing analysis of genomic copy number variation (CNV) using low-coverage and paired-end strategies is highly efficient and outperforms array-based CNV analysis
 
@@ -36,10 +37,17 @@
     3)虽然CNV的检出率随着测序深度的增加而增加，但此种增加并未呈现线性关系。增加率最快的是短插入文库构建法及3kb文库构建法的1X及3X WGS（Figure1）。与短插入文库构建法WGS相比，配对文库构建法WGS能检出更多的CNV，尤其是在3X的配对文库构建法的WGS中，更多的CNV及GS-CNV被检测出来（Figure 2a, Figure 1b）。此外，随着测序深度的增加，更多的GS-CNV也被检测出来。当CNV的大小在50kb左右的时候，增加测序深度对GS-CNV的检出率影响不大（Figure 2b-d）。在短插入文库构建法WGS中，随着测序深度的增加，5kb-50kb的GS-CNV检出率有最明显的增加，而配对文库构建法WGS随着测序深度的增加CNV的检出率变化不大。不管是哪种文库构建法，其检出50kb-500kb的大片段GS-CNV随着测序深度的增加都无明显变化（Figure2b-d）
     4)检出CNV的大小分布:短插入文库构建法及配对文库构建法检出的CNVs的大小分别在100bp~500kb及1kb~500kb之间（Figure 3），深度测序法及不一致配对分析法检出的CNVs的大小也不相同（Figure 3d-I）。整体而言，WGS检出的CNV长度范围比array更广泛；所有深度分析法检出的CNV都大于5kb（Figure 3d-f），而不一致序列分析法检出的CNV的大小的变异性则较大（Figure 3g-i）。同时，随着测序深度的增加，不管对于哪种CNV检出方法，检出的CNV的数量的增加主要体现在小于50kb的CNV上。
     
+### 1.5 应用和局限性
+    
+    应用：有创产前检测（羊水穿刺）、不孕不育和反复性流产原因排查、复杂疾病（如自闭症）和严重遗传病（如智障）的致病因素排查、无创产前检测（超声异常原因、排除母体CNV多态性带来的假阳性风险）、嵌合体筛查、PGS(辅助生殖)、肿瘤检测
+    局限性：多倍体（多见于流产物，无太大临床意义）、单亲二倍体（整条染色体UPD或染色体局部UPD出现的概率也非常低）、单碱基分辨率定位断裂点（CMA也无法做到）、倒位和平衡易位等结构变异（借助mate-pair sequencing可做到，CMA无法做到）、重复序列区域的CNV（CMA也无法做到）、区分父源和母源缺失/重复。
+    
+    
+    
 ## 2.WES
 
 ### 2.1 问题 
-    1）捕获偏好性（覆盖度不均一）
+    1）捕获偏好性，影响数据的覆盖均一性
     2）模板不连续
     3）
 
