@@ -17,6 +17,7 @@
 ## 参考链接：
 
     http://www.berrygenomics.com/ke-yan-dong-tai/udi/
+    http://www.seqchina.cn/3276.html
     
 
 
