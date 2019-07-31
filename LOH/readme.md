@@ -6,7 +6,7 @@
 
 ## 2.LOH分类
    
-### 2.1 CNL-LOH：CNV缺失引起的LOH，可用aCGH检测验证
+### 2.1 CNL-LOH：CNV缺失引起的LOH，可用aCGH、FISH、微卫星多态性、SNP-array检测。
 
 ### 2.2 CNN-LOH：CNV中性LOH，主要由于gene conversion和UPD导致的，不可用aCGH和FISH检测验证，可用SNP-array分析。UPD占血液和实体瘤中LOH发生的20-80%。
 
