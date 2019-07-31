@@ -18,6 +18,12 @@
 ## 4.LOH检测
     Loss of heterozygosity can be identified in cancers by noting the presence of heterozygosity at a genetic locus in an organism's germline DNA, and the absence of heterozygosity at that locus in the cancer cells. This is often done using polymorphic markers, such as microsatellites or single-nucleotide polymorphisms, for which the two parents contributed different alleles. Genome-wide LOH status of fresh or paraffin embedded tissue samples can be assessed by virtual karyotyping using SNP arrays.
     
+## 5.检测方法：
+
+### 5.1 微卫星多态性检测
+
+### 5.2 SNP多态性检测
+    
  
 
 
@@ -27,3 +33,9 @@
 ## 参考链接
 
 https://en.wikipedia.org/wiki/Loss_of_heterozygosity
+https://www.sciencedirect.com/science/article/pii/S1525157816300903
+https://www.cnblogs.com/Demo1589/p/8067316.html
+https://www.ncbi.nlm.nih.gov/projects/SNP/docs/rs_attributes.html#gmaf
+
+## 名词解释
+    Global minor allele frequency (MAF):  dbSNP is reporting the minor allele frequency for each rs included in  a default global population. Since this is being provided to distinguish common polymorphism from rare variants, the MAF is actually the second most frequent allele value. In other words, if there are 3 alleles, with frequencies of 0.50, 0.49, and 0.01, the MAF will be reported as 0.49. The current default global population is 1000Genome phase 3 genotype data from 2500 worldwide individuals, released in the May 2013 dataset.
