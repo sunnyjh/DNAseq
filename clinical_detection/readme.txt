@@ -19,9 +19,9 @@
     根据每条lane所有子文库index序列的比对结果来确定拆分是否容错：当同lane index间最小差异碱基数大于等于3时，允许1个碱基错配，其余情况不容错
     
 ### 1.3 fastq数据的二级拆分（针对子文库的fastq数据）
-    二级拆分后子文库fastq数据被拆分成单个样本的fastq数据，该阶段不容错，但是还保留二级barcode的序列信息，需要利用fastp进一步切除barcode信息。
+    二级拆分后子文库fastq数据被拆分成单个样本的fastq数据，该阶段不容错，但是还保留二级barcode的序列信息。
 
-### 
+### 1.4 fastp切除barcode
 
 ## 2.
 
@@ -31,7 +31,7 @@
 
 ## 4.
 
-## 5.consensus bam
+## 5.去重和校正（onsensus bam）
    1.
 
 
