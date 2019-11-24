@@ -45,6 +45,14 @@
 
   
 ## 4.变异检测
+   1.samtools mpileup（-B -q 20 -Q 0）分别建立肿瘤及白细胞样本pileup文件。
+2. MutLoci检出原始突变。白细胞保留所有突变用作对照，肿瘤样本保留初筛阈值线以上突变（vaf >=0.001/0.01, alt>=2, uniq_depth >=100 ）
+3. 链特异性过滤（fisher‘s exact p value<0.001,倍数>=10）。
+4. 对于normal中存在alt支持的突变，要求alt<=10, tumor_vaf >= 10 * normal_vaf。
+5. 位点合并，annovar注释，transvar校正，过滤人群频率>=0.05的点。
+6. alt碱基位置与一致性过滤，热点与非热点检出。对于候选alt位点，过滤碱基位置位于比对首尾及PE reads不一致的reads, 热点tumor_vaf>=0.001/0.01, alt>=3; 对于非热点tumor_vaf>=0.005/0.03, alt>=3。
+7. 检出结果一般只保留热点及非同义突变位点。
+
 
 
 ## 5.阴性背景池构建
