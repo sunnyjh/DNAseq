@@ -25,19 +25,15 @@
 ### 1.4 fastp切除barcode
     fastp去掉低质量reads和接头，然后将barcode序列从read序列上切除，放在read ID上，如UMI_ATGCTAGG_GTCAGTAA
 
-## 2.bwa比对和排序
+## 2.bwa比对、排序和合并
+    1）Bwa mem比对，过滤低质量比对reads(-q 10), 过滤未比对reads（-F 4）。
+    2）Samtools merge对比对结果进行合并。
 
-
-## 3.
-
-
-## 4.
-
-## 5.去重和校正（consensus bam）
-   一种barcode包括15种UMI(长度为8bp），双端UMI一共为15*15=225组合，利用gencore进行去重和校正：
+## 3.去重和校正（consensus bam）
+   一种barcode包括15种UMI(长度为8bp），双端UMI一共为15*15=225组合，利用[gencore](https://github.com/OpenGene/gencore)进行去重和校正：
    1）去重：比对位置起始、终止位置都相同，UMI相同的reads为duplication
    2）校正：利用高深度测序中的duplication对PCR和测序错误进行校正，具体算法参考gencore。
-   3）对于肿瘤样本，使用gencore按照同barcode，同起始，同终止的原则对*.sort.bam进行去重与碱基校正。默认血浆使用>=2x raw reads支持数据，组织使用>=1x raw reads支持数据。对于白细胞对照样本，使用sambamba进行去重。
+   3）对于肿瘤样本，使用gencore按照同barcode，同起始，同终止的原则对*.sort.bam进行去重与碱基校正。默认血浆使用>=2x raw reads支持，alt_ratio>=0.8；组织使用>=1x raw reads支持，alt_ratio >=0.9。对于白细胞对照样本，使用sambamba进行去重。
    
    gencore的算法：
    1）clusters the reads by their mapping positions and UMIs (if UMIs are applicable).
@@ -49,6 +45,7 @@
 
   
 
+## 
 
 
 ## panel设计
@@ -65,3 +62,7 @@
 ## 2.SNP突变阴性背景池构建
 
 ## 3.
+
+
+## 参考链接
+[gencore](https://github.com/OpenGene/gencore)
