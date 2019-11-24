@@ -61,9 +61,11 @@
         YF1918P YF1918P.bgm.cons.xls
 
 ### 5.3 背景模型拟合
-    利用[fitdistrplus](https://www.cnblogs.com/ywliao/p/6297162.html)包判断背景突变的vaf符合哪种统计学模型，然后通过qqplot判断实际数据与该统计学模型数据的相关性大小和pvalue值
-    FitBGMModel.pl -i  -o /share/Oncology/Somatic_Oncology/capsmart/yanfa/backgroud_NC/plasma/leave1/cons/split/xix.fit
+    利用[fitdistrplus](https://www.cnblogs.com/ywliao/p/6297162.html)包判断背景突变的vaf符合哪种统计学模型，然后通过qqplot判断实际数据与该统计学模型数据的相关性大小和pvalue值。([判断数据是否服从某一分布（一）](https://www.cnblogs.com/ywliao/p/6265945.html))
+    perl FitBGMModel.pl -i cons.total.bgm.xls -o cons.total.bgm.xls.fit
 
+### 5.4 利用背景突变过滤掉背景噪音
+     
 
 ## panel设计
     优化panel设计算法，提高各种突变类型的检测性能
@@ -84,3 +86,4 @@
 ## 参考链接
 [gencore](https://github.com/OpenGene/gencore)
 [fitdistrplus](https://www.cnblogs.com/ywliao/p/6297162.html)
+[weibull distribution](http://reliawiki.org/index.php/The_Weibull_Distribution)
