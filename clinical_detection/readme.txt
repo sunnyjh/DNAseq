@@ -44,8 +44,15 @@
    6）when checking the reference, if there exists one or more reads are concordant with reference genome with high quality, or all reads at this positions are with low quality, use the reference nucleotide for this position.
 
   
+## 4.变异检测
 
-## 
+
+## 5.阴性背景池构建
+    过滤背景信号，457血浆阴性背景池包含27个正常人的血浆样本，构建方法如下：
+### 5.1 得到consensus bam
+    同上方式
+### 5.2 检测背景突变
+    samtools mpileup -f hg19.fasta -l LC_CRC_456.cnv.bed -d 100000  -B -q 20 -Q 0 -a YF1918P.cons.bam | python getBackgroundMutation.v2.1.py YF1918P.bgm.cons.xls
 
 
 ## panel设计
