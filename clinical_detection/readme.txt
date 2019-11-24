@@ -51,8 +51,18 @@
     过滤背景信号，457血浆阴性背景池包含27个正常人的血浆样本，构建方法如下：
 ### 5.1 得到consensus bam
     同上方式
-### 5.2 检测背景突变
+### 5.2 检测单个样本的背景突变
     samtools mpileup -f hg19.fasta -l LC_CRC_456.cnv.bed -d 100000  -B -q 20 -Q 0 -a YF1918P.cons.bam | python getBackgroundMutation.v2.1.py YF1918P.bgm.cons.xls
+
+### 5.3 合并多个样本的背景突变
+    python combineMutation.py conf.xls cons.total.bgm.xls
+    
+    conf.xls格式为：样本名 样本名..bgm.cons.xls。如下：
+        YF1918P YF1918P.bgm.cons.xls
+
+### 5.3 背景模型拟合
+    利用[fitdistrplus](https://www.cnblogs.com/ywliao/p/6297162.html)包判断背景突变的vaf符合哪种统计学模型，然后通过qqplot判断实际数据与该统计学模型数据的相关性大小和pvalue值
+    FitBGMModel.pl -i  -o /share/Oncology/Somatic_Oncology/capsmart/yanfa/backgroud_NC/plasma/leave1/cons/split/xix.fit
 
 
 ## panel设计
@@ -73,3 +83,4 @@
 
 ## 参考链接
 [gencore](https://github.com/OpenGene/gencore)
+[fitdistrplus](https://www.cnblogs.com/ywliao/p/6297162.html)
