@@ -75,6 +75,14 @@
 ### 5.4 利用背景突变过滤掉背景噪音
      
 
+## 6.变异过滤
+
+### 6.1 链偏好性过滤[getStrandInfo.py]
+    过滤条件：1）plus_alt = 0 或者 minus_alt = 0
+             2）plus_alf_vaf = plus_alt/(plus_ref+plus_alt),minus_alf_vaf = minus_alt/(minus_ref+minus_alt),plus_alt_vaf/minus_alt_vaf>10或者1/10.
+
+### 6.2 
+
 ## panel设计
     优化panel设计算法，提高各种突变类型的检测性能
         Indel 区（关联cosmic数据库,掺入突变型探针）
