@@ -1,6 +1,6 @@
 # NGS临床检测的流程
 
-## 1.数据拆分（参考链接：https://www.jianshu.com/p/0eaa6bce82b2 ）
+## 1.[数据拆分](https://www.jianshu.com/p/0eaa6bce82b2)
 
 ### 1.1 文库结构
 
@@ -56,7 +56,7 @@
 
 
 ## 5.阴性背景池构建
-    过滤背景信号，457血浆阴性背景池包含27个正常人的血浆样本，457组织阴性背景池包含70个正常人的组织样本，构建方法如下：
+    过滤背景信号，457血浆阴性背景池包含27个正常人的血浆样本，457组织阴性背景池包含70个正常人的组织样本，31组织阴性背景池包含30个正常人的组织样本，构建方法如下：
 ### 5.1 得到consensus bam
     同上方式
 ### 5.2 检测单个样本的背景突变
@@ -73,8 +73,9 @@
     perl FitBGMModel.pl -i cons.total.bgm.xls -o cons.total.bgm.xls.fit
 
 ### 5.4 利用背景突变过滤掉背景噪音
+     perl filterBGM.pl -i annovar.combined.xls.strand -n info.txt -o annovar.combined.xls.test -bp sort.total.bgm.xls.fit -bt sort.total.bgm.xls.fit
+     当只有阴性背景池中一个样本有突变，采用的二项分布检验；当只有阴性背景池中2-4个样本有突变，采用的z检测；其他情况为weibull分布。
      
-
 ## 6.变异过滤
 
 ### 6.1 链偏好性过滤[getStrandInfo.py]
