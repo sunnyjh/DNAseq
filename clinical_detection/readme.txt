@@ -56,7 +56,7 @@
 
 
 ## 5.阴性背景池构建
-    过滤背景信号，457血浆阴性背景池包含27个正常人的血浆样本，457组织阴性背景池包含70个正常人的组织样本，31组织阴性背景池包含30个正常人的组织样本，构建方法如下：
+    过滤背景信号，457血浆阴性背景池包含27个正常人的血浆样本，457组织阴性背景池包含70个正常人的组织样本，31血浆阴性背景池包含24个正常人的血浆样本，31组织阴性背景池包含30个正常人的组织样本，构建方法如下：
 ### 5.1 得到consensus bam
     同上方式
 ### 5.2 检测单个样本的背景突变
@@ -93,6 +93,17 @@
 
 
 
+
+
+## 7.化疗位点检测
+### 7.1 从phmGKB数据库获得化疗位点数据库
+    共有31条药物+位点信息，包括位置，基因型，药物等信息，如下：
+    药物	基因/位点	作用	结果解读	等级	默认分型	chrom	pos	ref	alt	genotype
+    甲氨蝶呤Methotrexate 	ABCB1/rs1045642	毒副作用	AA:Patients with the AA genotype and lymphoma or leukemia who are treated with methotrexate may have increased concentrations of the drug and may have an increased risk of toxicity as compared to patients with the GG genotype, although this is contradicted in some studies. Other genetic and clinical factors may also influence a patient's risk of methotrexate-induced toxicities. 	2A	AA	7	87138645	A	G	0/0
+    甲氨蝶呤Methotrexate 	ABCB1/rs1045642	毒副作用	AG:Patients with the AG genotype and lymphoma or leukemia who are treated with methotrexate may have an increased risk of toxicity as compared to patients with the GG genotype, or a decreased risk of toxicity as compared to patients with the AA genotype, although this is contradicted in some studies. Other genetic and clinical factors may also influence a patient's risk of methotrexate-induced toxicities.	2A	AA	7	87138645	A	G	0/1
+    甲氨蝶呤Methotrexate 	ABCB1/rs1045642	毒副作用	GG:Patients with the GG genotype and lymphoma or leukemia who are treated with methotrexate may have lower concentrations of the drug and may have a reduced, but not absent, risk of toxicity as compared to patients with the AA genotype, although this is contradicted in some studies. Other genetic and clinical factors may also influence a patient's risk of methotrexate-induced toxicities. 	2A	AA	7	87138645	A	G	1/1
+
+### 7.2 从sample.raw.snpindel.xls文件中找到相应化疗位点位置的vaf值，如果vaf小于0.2，则认为该样本该化疗位点的基因型为0/0(这种判断是不合适的，应该要求alt reads>=20)。如果0.2<=vaf<=0.7,则认为该样本该化疗位点的基因型为0/1。如果vaf>0.7,则认为该样本该化疗位点的基因型为1/1。
 
 
 ## panel设计
