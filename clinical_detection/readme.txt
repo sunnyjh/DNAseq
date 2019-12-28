@@ -207,6 +207,8 @@
 
 ## 36.各个产品出报告前的特殊操作：如胚系0.05<vaf<0.3的P,LP和VUS点，如果之前没有验证过，则需要进行一代验证，如果三次验证结果都为为假，则为假阳性位点
 
+## 37.扩增子测序（RNAfusion），如何目标序列很少，如何建库？是加了control amplicons
+
 ## 参考链接
 [gencore](https://github.com/OpenGene/gencore)
 [fitdistrplus](https://www.cnblogs.com/ywliao/p/6297162.html)
