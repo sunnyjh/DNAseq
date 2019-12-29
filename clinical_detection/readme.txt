@@ -209,6 +209,16 @@
 
 ## 37.扩增子测序（RNAfusion），如何目标序列很少，如何建库？是加了control amplicons
 
+## 38.位点合并：
+   1）位点自动合并(combinePosInVcf.pl)
+   
+   2）需审核后合并的位点(warningPosInResult3.pl)
+   a.利用warningPosInResult3.pl)计算annovar.combined.xls（先按照样本名，再按照染色体，再按照起始基因组坐标排序）中染色体坐标靠后位点（如a2=start2)和靠前位点（a1=start1+ref-1)的差值a2-a1。如果a2-a1>=6或a2-a1<0,则该靠后位点和靠前位点不能合并在一起。
+   b.具体位点合并原则有：是否在同一条read上(顺式或者反式)，顺式可合并，反式不可以，如果顺式和反式都有，则两种都存在；突变频率是否接近，如果接近，则可合；
+   c.复杂的位点合并可用samtools tview或IGV查看
+
+## 39.IGV查看位点：
+
 ## 参考链接
 [gencore](https://github.com/OpenGene/gencore)
 [fitdistrplus](https://www.cnblogs.com/ywliao/p/6297162.html)
