@@ -218,6 +218,16 @@
    c.复杂的位点合并可用samtools tview或IGV查看
 
 ## 39.IGV查看位点：
+   1)SNP/INDEL
+   2)CNV
+   3)FUSION：
+   a.点击选择bam文件，然后右键选择Expanded和color mismatch base，color alignments by选择no color, group alignments by选择none
+   b.工具栏选择Regions,然后选择genelists,创建新的融合基因对，每行代表一个基因坐标：如下
+     chr4:25666625-25666625
+     chr6:117658309-117658309
+
+   
+   
 
 ## 参考链接
 [gencore](https://github.com/OpenGene/gencore)
