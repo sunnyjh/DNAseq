@@ -123,6 +123,12 @@
 
 ## 2.低频嵌合位点
 
+###2.1 嵌合突变：
+https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3615857/
+https://www.researchgate.net/post/What_does_Mosaic_Mutation_really_mean
+https://www.spectrumnews.org/news/large-study-shines-spotlight-mosaic-mutations-autism/
+https://www.the-scientist.com/daily-news/mosaic-mutations-may-not-be-rare-35342
+
 ## 3.CNV不报缺失，是因为只有2个拷贝，检测不太准确，很可能是样本原因造成的，如捕获等。而且CNV缺失也没有相应的靶向药。但是抑癌基因（tp53，）的CNV缺失还是有意义的。
 
 ## 4.
