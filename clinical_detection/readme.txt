@@ -123,11 +123,14 @@
 
 ## 2.低频嵌合位点
 
-###2.1 嵌合突变：
+###2.1 嵌合现象（mosaicism）
+   1）嵌合现象：表示一个个体中有2或2种以上基因型的现象。嵌合现象包括体细胞嵌合（发生在体细胞种）和性腺嵌合（发生在性腺种），性腺嵌合是体细胞嵌合的一种特殊形式，嵌合现象发生在性腺中。体细胞嵌合会影响个体本身，而性腺嵌合会影响后代([Mosaicism is] erupting all the time in the process of the development of the organism, he said—potentially contributing to disease in adults, as well as potential risks to their childre)。广义的嵌合现象包括分化后的体细胞突变、多能干细胞突变和胚胎阶段的全能干细胞的突变（每个位点代际突变概率为10^-8，人体的细胞数量为10^14，每个个体突变细胞数量为10^6个，说明嵌合现象在人体中非常普遍，不过有些是有害的），而狭义的嵌合现象指的是胚胎阶段全能干细胞发生突变如有丝分裂错误，复制错误以及SNV/INDEL、结构变异等。
+   2）如果鉴定胚系突变为denovo mutation，应该排除该突变是否为嵌合突变（可以用血液样本PCR进行鉴定，但是如果白细胞中没有嵌合，该方法无效。那么应该利用cfDNA的方式进行鉴定），因为嵌合突变会影响后代。
 https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3615857/
 https://www.researchgate.net/post/What_does_Mosaic_Mutation_really_mean
 https://www.spectrumnews.org/news/large-study-shines-spotlight-mosaic-mutations-autism/
 https://www.the-scientist.com/daily-news/mosaic-mutations-may-not-be-rare-35342
+
 
 ## 3.CNV不报缺失，是因为只有2个拷贝，检测不太准确，很可能是样本原因造成的，如捕获等。而且CNV缺失也没有相应的靶向药。但是抑癌基因（tp53，）的CNV缺失还是有意义的。
 
