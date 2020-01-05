@@ -126,6 +126,12 @@
 ###2.1 嵌合现象（mosaicism）
    1）嵌合现象：表示一个个体中有2或2种以上基因型的现象。嵌合现象包括体细胞嵌合（发生在体细胞种）和性腺嵌合（发生在性腺种），性腺嵌合是体细胞嵌合的一种特殊形式，嵌合现象发生在性腺中。体细胞嵌合会影响个体本身，而性腺嵌合会影响后代([Mosaicism is] erupting all the time in the process of the development of the organism, he said—potentially contributing to disease in adults, as well as potential risks to their childre)。广义的嵌合现象包括分化后的体细胞突变、多能干细胞突变和胚胎阶段的全能干细胞的突变（每个位点代际突变概率为10^-8，人体的细胞数量为10^14，每个个体突变细胞数量为10^6个，说明嵌合现象在人体中非常普遍，不过有些是有害的），而狭义的嵌合现象指的是胚胎阶段全能干细胞发生突变如有丝分裂错误，复制错误以及SNV/INDEL、结构变异等。
    2）如果鉴定胚系突变为denovo mutation，应该排除该突变是否为嵌合突变（可以用血液样本PCR进行鉴定，但是如果白细胞中没有嵌合，该方法无效。那么应该利用cfDNA的方式进行鉴定），因为嵌合突变会影响后代。
+
+  3)WES检测嵌合突变方法：先证者和父母都存在的非同义突变，但是该突变在父母中低于0.5，而在先证者中趋向于0.5，再利用用二项分布检验判断先证者中为P<0.05或在父母中P>10^-5则表示为嵌合突变(查看文献确定)，然后一代验证。
+   由于遗传的嵌合突变像新发突变一样，不必经过纯化选择，所以当确定用于严重早发性疾病的患者时，它们是特别有意义的。我们的结果表明，在临床确定致病变异的时候，除了注重分析新发突变，也要考虑父母嵌合突变。
+  看了本文有点惊讶父亲携带25%突变可以完全没有表型，这也提示我们在数据分析时，很可能认为这是遗传自父母的变异而把它排除，在日常分析时，还应该对先证者单独分析，然后再看父母的数据，而不能一上来trio就只看新发突变、隐性纯合与复合杂合突变以及X染色体连锁隐性位点。另外看了文章的分析方法是用GATK，GATK分析胚系突变还行，但分析低比例嵌合突变差强人意，这也可以从表1中突变丰度都在10%以上可以看出，也许用肿瘤分析体细胞突变的算法可以发现更多的父母低比例嵌合遗传事件。（https://mp.weixin.qq.com/s/o6rLK1qm8AjPRNsdHfIZSQ)
+  
+https://bbs.genelinks.com/thread-916-1-1.html?from=groupmessage&isappinstalled=0
 https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3615857/
 https://www.researchgate.net/post/What_does_Mosaic_Mutation_really_mean
 https://www.spectrumnews.org/news/large-study-shines-spotlight-mosaic-mutations-autism/
