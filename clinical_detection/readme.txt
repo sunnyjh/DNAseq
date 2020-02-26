@@ -242,6 +242,13 @@ https://www.the-scientist.com/daily-news/mosaic-mutations-may-not-be-rare-35342
      chr6:117658309-117658309
    c.reads数如何与结果中保持一致呢？
 
+## 40.融合解读规则阅读及融合探针
+
+## 41.DCE2.0数据库规则
+
+## 42.遗传解读规则
+
+## 43.
    
    
 
