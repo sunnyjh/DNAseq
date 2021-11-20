@@ -35,7 +35,6 @@ for (7..$#h){
 
 my $R = Statistics::R->new();
 $R->startR;
-#$R->run(q`.libPaths(c("/share/work3/capsmart/pipeline/capSMART/CAPcSMART/Rlib","/share/work3/wangrr/local/Rlib","/share/work2/liuyan/RlocalLib","/home/capsmart/R/x86_64-pc-linux-gnu-library/3.4","/share/work3/wangrr/local/anaconda2/lib/R/library"))`);
 $R->run(q`library(fitdistrplus)`);
 
 open OUT,">$out" or die $!;
