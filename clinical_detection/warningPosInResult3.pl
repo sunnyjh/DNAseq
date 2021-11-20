@@ -86,8 +86,6 @@ print << "EOF!";
 # REQUIREMENTS: ---
 #         BUGS: ---
 #        NOTES: ---
-#       AUTHOR: Wang Ruiru (wangrr), wangruiru\@berrygenomics.com
-# ORGANIZATION: Berry Genomics
 #      VERSION: 1.0
 #      CREATED: 07/23/18 15:35:22
 #     REVISION: ---
