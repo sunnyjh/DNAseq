@@ -35,6 +35,7 @@ for (7..$#h){
 
 my $R = Statistics::R->new();
 $R->startR;
+$R->run(q`.libPaths(c("/share/work3/capsmart/pipeline/capSMART/CAPcSMART/Rlib","/share/work3/wangrr/local/Rlib","/share/work2/liuyan/RlocalLib","/home/capsmart/R/x86_64-pc-linux-gnu-library/3.4","/share/work3/wangrr/local/anaconda2/lib/R/library"))`);
 $R->run(q`library(fitdistrplus)`);
 
 open OUT,">$out" or die $!;
@@ -93,6 +94,8 @@ sub weibull_fit{
 	$R->set('x', \@temp);
 	$R->run(q`x <- x[which(x>0)]`);
 	my $len = $R->get('length(unique(x))');
+	$R->set('o',"$in.pdf");
+	$R->run(q`pdf(o)`);
 	if($len>2){
 		$R->run(q`w <- NA`);
 		$R->run(q`tryCatch({w<-suppressWarnings(summary(fitdist(x*100, "weibull"))$estimate)}, warning = function(war){ b<-1 }, error = function(err){ b<-1 }, finally = { print(w) })`);
@@ -105,6 +108,7 @@ sub weibull_fit{
 		        $cpval = $R->get('co$p.value');
 		 }
 	}
+	$R->run(q`dev.off()`);
 	return ($shape,$scale,$cor,$cpval);
 }
 
